@@ -1,12 +1,10 @@
-fun checkFirst(name: List<String>){
-    if(name.firstOrNull()!=null){
-        println(name.first())
-    }else{
-        println("no names")
+fun printNames(names: List<String>){
+    for(name in names){
+        println(name)
     }
 }
 
 fun main(){
     var names: List<String> = listOf("Kevin", "Mila", "Sally")
-    checkFirst(names)
+    printNames(names)
 }
