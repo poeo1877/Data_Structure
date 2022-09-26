@@ -1,13 +1,13 @@
-fun multiplicationBoard(size: Int){
-    for(number in 1..size){
-        print(" | ")
-        for(otherNumber in 1..size){
-            print("$number x $otherNumber = ${number*otherNumber} | ")
+fun linearContains(value: Int, numbers: List<Int>): Boolean {
+    for(element in numbers){
+        if(element == value){
+            return true
         }
-        println()
     }
+    return false
 }
 
 fun main(){
-    multiplicationBoard(5)
+    val numbers = listOf(1, 3, 56, 66, 68, 80, 99, 105, 450)
+    println(linearContains(99, numbers))
 }
