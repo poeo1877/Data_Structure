@@ -1,7 +1,27 @@
 fun printSorted(numbers: List<Int>){
-    val sorted = numbers.sorted()
-    for(element in sorted){
-        print("$element ")
+    if(numbers.isEmpty()) return
+    var currentCount = 0
+    var minValue = Int.MIN_VALUE
+    for(value in numbers){
+        if(value == minValue){
+            print("$value ")
+            currentCount += 1
+        }
+    }
+    while(currentCount < numbers.size){
+        var currentValue = numbers.maxOrNull()!!
+        for(value in numbers){
+            if(value < currentValue && value > minValue){
+                currentValue = value
+            }
+        }
+        for (value in numbers){
+            if(value == currentValue){
+                print("$value ")
+                currentCount += 1
+            }
+        }
+        minValue = currentValue
     }
 }
 
