@@ -1,13 +1,11 @@
-fun linearContains(value: Int, numbers: List<Int>): Boolean {
-    for(element in numbers){
-        if(element == value){
-            return true
-        }
+fun printSorted(numbers: List<Int>){
+    val sorted = numbers.sorted()
+    for(element in sorted){
+        print("$element ")
     }
-    return false
 }
 
 fun main(){
-    val numbers = listOf(1, 3, 56, 66, 68, 80, 99, 105, 450)
-    println(linearContains(99, numbers))
+    val numbers=listOf(1, -5, 3, 56, 66, 68, 80, 99, 105, 450)
+    printSorted(numbers)
 }
