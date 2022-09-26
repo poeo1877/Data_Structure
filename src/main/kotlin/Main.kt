@@ -1,10 +1,13 @@
-fun printNames(names: List<String>){
-    for(name in names){
-        println(name)
+fun multiplicationBoard(size: Int){
+    for(number in 1..size){
+        print(" | ")
+        for(otherNumber in 1..size){
+            print("$number x $otherNumber = ${number*otherNumber} | ")
+        }
+        println()
     }
 }
 
 fun main(){
-    var names: List<String> = listOf("Kevin", "Mila", "Sally")
-    printNames(names)
+    multiplicationBoard(5)
 }
