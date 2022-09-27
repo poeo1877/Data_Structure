@@ -1,16 +1,26 @@
 import java.lang.IndexOutOfBoundsException
 
-class LinkedList<T>: Iterable<T> {
+class LinkedList<T>: Iterable<T>, Collection<T> {
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
-    var size = 0
+   override var size = 0
         private set //read only로 만들기
 
     override fun iterator(): Iterator<T> {
         return LinkedListIterator(this)
     }
-    fun isEmpty(): Boolean {
+   override fun isEmpty(): Boolean {
         return size == 0
+    }
+    override fun contains(element: T):Boolean {
+        for (item in this)
+            if (item == element)return true
+        return false
+    }
+    override fun containsAll(elements: Collection<T>): Boolean{
+        for (searched in elements)
+            if(!contains(searched))return false
+        return true
     }
 
     override fun toString(): String {
