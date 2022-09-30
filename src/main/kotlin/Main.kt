@@ -1,12 +1,23 @@
-fun main() {
-    val stack = Stack<Int>().apply {
-        push(1)
-        push(2)
-        push(3)
-        push(4)
+fun String.checkParenntheses():Boolean {
+    val stack=Stack<Char>()
+    for(character in this){
+        when (character){
+            '('->stack.push(character)
+            ')'->if(stack.isEmpty){
+                return false
+            }else{
+                stack.pop()
+            }
+        }
     }
-    print(stack)
-    println(stack.peek())
-    print(stack)
+
+    return stack.isEmpty
+}
+
+
+fun main() {
+    var s ="h((e))llo(world)()"
+    println(s.checkParenntheses())
+    println("(hello world".checkParenntheses())
 }
 
