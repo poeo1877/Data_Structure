@@ -1,11 +1,10 @@
 fun main() {
-    val queue = LinkedListQueue<String>().apply {
+    val queue = RingBufferQueue<String>(5).apply {
         enqueue("Ray")
         enqueue("Brian")
         enqueue("Eric")
         enqueue("Jack")
         enqueue("Hoodie")
-
     }
     println(queue)
     println(queue.dequeue())
