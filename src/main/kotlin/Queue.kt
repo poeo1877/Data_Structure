@@ -24,3 +24,24 @@ class ArrayListQueue<T> : QueueInterface<T> {
     override fun toString():String = list.toString()
 }
 
+class LinkedListQueue<T> : QueueInterface<T>{
+    private val list = LinkedList<T>()
+    private var size = 0
+    override val count: Int
+        get() = size
+
+    override fun peek(): T? = list.nodeAt(0)?.value
+    override fun enqueue(element: T): Boolean {
+        list.append(element)
+        size++
+        return true
+    }
+
+    override fun dequeue(): T? {
+        val firstNode = list.nodeAt(0)?:return null
+        size--
+        return list.removeHead()
+    }
+
+    override fun toString(): String = list.toString()
+}
