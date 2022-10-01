@@ -8,6 +8,17 @@ class TreeNode<T>(val value:T) {
             it.forEachDepthFirst(visit)
         }
     }
+    fun forEachLevelOrder(visit: Visitor<T>) { //LinkedListQueue부터 선행 必
+        visit(this)
+        val queue = LinkedListQueue<TreeNode<T>>()
+        children.forEach{queue.enqueue(it)}
+        var node = queue.dequeue()
+        while (node != null) {
+            visit(node)
+            node.children.forEach {queue.enqueue(it)}
+            node = queue.dequeue()
+        }
+    }
 }
 
 typealias Visitor<T> = (TreeNode<T>) -> Unit  //지금 접근한 node가 뭔지 알려줌
