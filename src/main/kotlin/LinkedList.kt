@@ -3,13 +3,13 @@ import java.lang.IndexOutOfBoundsException
 class LinkedList<T>: Iterable<T>, Collection<T> {
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
-   override var size = 0
+    override var size = 0
         private set //read only로 만들기
 
     override fun iterator(): Iterator<T> {
         return LinkedListIterator(this)
     }
-   override fun isEmpty(): Boolean {
+    override fun isEmpty(): Boolean {
         return size == 0
     }
     override fun contains(element: T):Boolean {
@@ -104,6 +104,14 @@ class LinkedList<T>: Iterable<T>, Collection<T> {
         }
         node.next=node.next?.next
         return result
+    }
+    fun removeHead():T?{
+        val head = head?:return null
+        size--
+        this.head = head.next
+        if(isEmpty())
+            this.tail=null
+        return head.value
     }
 }
 

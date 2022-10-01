@@ -1,34 +1,16 @@
+import kotlin.collections.ArrayDeque
 
-fun makeBeverageTree():TreeNode<String>{
-    val tree = TreeNode("Beverages")
-    val hot = TreeNode("hot")
-    val cold = TreeNode("cold")
-    val tea = TreeNode("tea")
-    val coffee = TreeNode("coffee")
-    val chocolate = TreeNode("cocoa")
-    val blackTea = TreeNode("black")
-    val greenTea = TreeNode("green")
-    val chaiTea = TreeNode("chai")
-    val soda = TreeNode("soda")
-    val milk = TreeNode("milk")
-    val gingerAle = TreeNode("ginger ale")
-    val bitterLemon = TreeNode("bitter lemon")
-    tree.add(hot)
-    tree.add(cold)
-    hot.add(tea)
-    hot.add(coffee)
-    hot.add(chocolate)
-    cold.add(soda)
-    cold.add(milk)
-    tea.add(blackTea)
-    tea.add(greenTea)
-    tea.add(chaiTea)
-    soda.add(gingerAle)
-    soda.add(bitterLemon)
-    return tree
-}
+fun main() {
+    val arDeque = ArrayDeque<Int>()
+    arDeque.add(1)
+    arDeque.add(2)
+    arDeque.add(5)
+    arDeque.add(10)
+    arDeque.addLast(8)
+    arDeque.addFirst(23)
 
-fun main(){
-    var tree = makeBeverageTree()
-    tree.forEachDepthFirst { println(it.value) }
+    println(arDeque)
+
+    arDeque.removeLast()
+    println(arDeque)
 }
