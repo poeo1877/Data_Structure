@@ -28,6 +28,26 @@ class TreeNode<T>(val value:T) {
         }
         return result
     }
+
+    override fun toString(): String {
+        val queue = ArrayListQueue<TreeNode<T>>()
+        var nodesleftInCurrentLevel = 0
+        var ret = ""
+        queue.enqueue(this)
+        while (queue.isEmpty.not()){
+            nodesleftInCurrentLevel = queue.count
+            while(nodesleftInCurrentLevel > 0){
+                val node = queue.dequeue()
+                node?.let {
+                    ret += "${node.value} "
+                    node.children.forEach{ queue.enqueue(it) }
+                    nodesleftInCurrentLevel--
+                } ?: break
+            }
+            ret += "\n"
+        }
+        return ret
+    }
 }
 
 typealias Visitor<T> = (TreeNode<T>) -> Unit  //지금 접근한 node가 뭔지 알려줌

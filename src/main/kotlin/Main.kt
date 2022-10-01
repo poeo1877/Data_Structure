@@ -29,10 +29,5 @@ fun makeBeverageTree():TreeNode<String>{
 
 fun main(){
     var tree = makeBeverageTree()
-    tree.search("ginger ale")?.let {
-        println("Found node: ${it.value}")
-    }
-    tree.search("Black Russian")?.let {
-        println(it.value)
-    }?:println("Couldn't find it")
+   println(tree)
 }
