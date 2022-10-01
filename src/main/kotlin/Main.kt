@@ -1,13 +1,12 @@
 fun main() {
-    val queue = RingBufferQueue<String>(5).apply {
+    val queue =  ArrayListQueue<String>().apply {
         enqueue("Ray")
         enqueue("Brian")
         enqueue("Eric")
         enqueue("Jack")
         enqueue("Hoodie")
     }
-    println(queue)
-    println(queue.dequeue())
-    println(queue)
-    println("Next up: ${queue.peek()}")
+    println("before: $queue")
+    queue.reverse()
+    println("after: $queue")
 }

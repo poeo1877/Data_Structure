@@ -6,6 +6,20 @@ interface QueueInterface<T> {
     val isEmpty:Boolean
         get() = count ==0
     fun peek(): T?
+    fun reverse(){
+        val aux = Stack<T>()
+        var next = this.dequeue()
+        while (next != null){
+            aux.push(next)
+            next=this.dequeue()
+        }
+        var next2 = aux.pop()   //Stack의 FILO 특징을 이용해 역순으로 만든 것
+        while(next2 != null){
+            this.enqueue(next2)
+            next2 = aux.pop()
+        }
+    }
+
 }
 
 class ArrayListQueue<T> : QueueInterface<T> {
