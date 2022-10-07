@@ -1,7 +1,9 @@
 import java.lang.Math.max
-class BinaryNode<T>(val value:T) {
+class BinaryNode<T>(var value:T) {
     var leftChild: BinaryNode<T>?=null
     var rightChild: BinaryNode<T>?= null
+    val min:BinaryNode<T>?
+        get()=leftChild?.min?:this
 
     private fun diagram(node: BinaryNode<T>?,
                         top: String = "",

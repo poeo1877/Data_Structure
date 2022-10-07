@@ -45,9 +45,18 @@ fun makeBinaryTree(): BinaryNode<Int>{
 
 
 fun main(){
-    val bst = BinarySearchTree<Int>()
-    (0..4).forEach{
-        bst.insert(it)
-    }
-    println(bst)
+   val exTree = BinarySearchTree<Int>().apply {
+       insert(3);
+       insert(1);
+       insert(4);
+       insert(0);
+       insert(2);
+       insert(5);
+       insert(7);
+   }
+    println("Tree before removal: ")
+    println(exTree)
+    exTree.remove(3)
+    println("Tree after removing root:")
+    println(exTree)
 }
