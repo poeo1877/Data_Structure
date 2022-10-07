@@ -47,4 +47,16 @@ fun makeBinaryTree(): BinaryNode<Int>{
 fun main(){
     val tree = makeBinaryTree()
     println(tree)
+    println("------------------\n[InOrder]")
+    tree.traverseInOrder { println(it) }
+    println("This tree height: ${tree.hegith()}")
+
+    println("------------------\n[PreOrder]")
+    tree.traversePreOrder { println(it) }
+    println("This tree height: ${tree.hegith()}")
+
+    println("------------------\n[PostOrder]")
+    tree.traversePostOrder { println(it) }
+    println("This tree height: ${tree.hegith()}")
+
 }
