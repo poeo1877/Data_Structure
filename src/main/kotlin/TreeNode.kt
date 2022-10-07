@@ -51,3 +51,5 @@ class TreeNode<T>(val value:T) {
 }
 
 typealias Visitor<T> = (TreeNode<T>) -> Unit  //지금 접근한 node가 뭔지 알려줌
+
+typealias  BinaryVisitor<T> = (T) -> Unit
