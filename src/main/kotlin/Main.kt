@@ -45,18 +45,11 @@ fun makeBinaryTree(): BinaryNode<Int>{
 
 
 fun main(){
-   val exTree = BinarySearchTree<Int>().apply {
-       insert(3);
-       insert(1);
-       insert(4);
-       insert(0);
-       insert(2);
-       insert(5);
-       insert(7);
-   }
-    println("Tree before removal: ")
-    println(exTree)
-    exTree.remove(3)
-    println("Tree after removing root:")
-    println(exTree)
+  val tree = AVLTree<Int>()
+    //이진 편향 트리가 되도록 만든다.
+    (0..14).forEach{
+        tree.insert(it)
+    }
+    //그래도 출력 결과 완전 이진 트리와 비슷하게 된다
+    print(tree)
 }
