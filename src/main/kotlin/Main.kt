@@ -46,10 +46,12 @@ fun makeBinaryTree(): BinaryNode<Int>{
 
 fun main(){
   val tree = AVLTree<Int>()
-    //이진 편향 트리가 되도록 만든다.
-    (0..14).forEach{
-        tree.insert(it)
-    }
-    //그래도 출력 결과 완전 이진 트리와 비슷하게 된다
+    tree.insert(15)
+    tree.insert(10)
+    tree.insert(16)
+    tree.insert(18)
+    print(tree)
+    tree.remove(10)
+    println("--------------------\n[After remove(10)")
     print(tree)
 }
