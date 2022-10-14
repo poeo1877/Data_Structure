@@ -45,13 +45,10 @@ fun makeBinaryTree(): BinaryNode<Int>{
 
 
 fun main(){
-  val tree = AVLTree<Int>()
-    tree.insert(15)
-    tree.insert(10)
-    tree.insert(16)
-    tree.insert(18)
-    print(tree)
-    tree.remove(10)
-    println("--------------------\n[After remove(10)")
-    print(tree)
+    val trie = Trie<Char>()
+    trie.insert("cute".toList())
+    if(trie.contains("cute".toList())){
+        println("cute is in the trie")
+    }
+
 }
