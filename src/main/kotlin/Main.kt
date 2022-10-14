@@ -46,9 +46,8 @@ fun makeBinaryTree(): BinaryNode<Int>{
 
 fun main(){
     val trie = Trie<Char>()
-    trie.insert("cute".toList())
-    if(trie.contains("cute".toList())){
+    trie.insert("cute")
+    if(trie.contains("cute")){
         println("cute is in the trie")
     }
-
 }
