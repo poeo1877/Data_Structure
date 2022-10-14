@@ -10,6 +10,7 @@ class Trie<Key>{
             current = current.children[element]!!
         }
         current.isTerminating = true
+        storedLists.add(list)
     }
 
     fun contains(list: List<Key>): Boolean{
@@ -28,6 +29,7 @@ class Trie<Key>{
         }
         if(!current.isTerminating)return
         current.isTerminating = false
+        storedLists.remove(collection)
         val parent = current.parent
         while(current.children.isEmpty()&&!current.isTerminating){
             parent?.let{
@@ -53,6 +55,10 @@ class Trie<Key>{
         }
         return results
     }
+    private val storedLists: MutableSet<List<Key>> = mutableSetOf()
+    val lists: List<List<Key>>
+        get() = storedLists.toList()
+
 }
 fun Trie<Char>.insert(string:String){
     insert(string.toList())
