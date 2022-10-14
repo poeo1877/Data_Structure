@@ -58,6 +58,10 @@ class Trie<Key>{
     private val storedLists: MutableSet<List<Key>> = mutableSetOf()
     val lists: List<List<Key>>
         get() = storedLists.toList()
+    val count: Int
+        get()=storedLists.count()
+    val isEmpty:Boolean
+        get()=storedLists.isEmpty()
 
 }
 fun Trie<Char>.insert(string:String){

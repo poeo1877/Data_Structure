@@ -52,5 +52,7 @@ fun main(){
         insert("cared")
         insert("cars")
     }
-   println(trie.lists)
+    println(trie.lists)
+    println(trie.count)
+    println(trie.isEmpty)
 }
