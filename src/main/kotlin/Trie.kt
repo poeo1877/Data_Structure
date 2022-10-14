@@ -36,7 +36,23 @@ class Trie<Key>{
             }
         }
     }
-
+    fun collections(prefix: List<Key>): List<List<Key>> {
+        var current = root
+        prefix.forEach{ element ->
+            val child = current.children[element] ?: return emptyList()
+            current = child
+        }
+        return collections(prefix, current)
+    }
+    private fun collections(prefix: List<Key>, node:TrieNode<Key>?): List<List<Key>>{
+        val results = mutableListOf<List<Key>>()
+        if(node?.isTerminating == true)
+            results.add(prefix)
+        node?.children?.forEach{(key, node)->
+            results.addAll(collections(prefix+key, node))
+        }
+        return results
+    }
 }
 fun Trie<Char>.insert(string:String){
     insert(string.toList())
@@ -46,4 +62,9 @@ fun Trie<Char>.contains(string:String):Boolean{
 }
 fun Trie<Char>.remove(string:String){
     remove(string.toList())
+}
+fun Trie<Char>.collections(prefix:String):List<String>{
+    return collections(prefix.toList()).map{
+        it.joinToString ( separator = "")
+    }
 }
