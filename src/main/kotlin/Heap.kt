@@ -143,3 +143,9 @@ class MinHeap<Element: Comparable<Element>>() : AbstractHeap<Element>() {
         return b.compareTo(a)
     }
 }
+class Heap<Element>(
+    private val comparator : Comparator<Element>
+):AbstractHeap<Element>() {
+    override fun compare(a: Element, b: Element): Int =
+        comparator.compare(a, b)
+}
