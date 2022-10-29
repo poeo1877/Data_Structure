@@ -1,18 +1,17 @@
 
 
 fun main(){
-  val stringLengthComparator = object : Comparator<String> {
-      override fun compare(o1: String?, o2: String?): Int {
-          val length1 = o1?.length ?: -1
-          val length2 = o2?.length ?: -1
-          return length1 - length2
-      }
-  }
-    val priorityQueue = PriorityQueue<String>(stringLengthComparator)
-    arrayListOf("one", "two", "three", "forty", "five", "six", "seven", "eight", "nine").forEach{
+    val p1 = Person("Josh", 21, true)
+    val p2 = Person("Jake", 22, true)
+    val p3 = Person("Clay", 28, false)
+    val p4 = Person("Cindy", 28, false)
+    val p5 = Person("Sabrina", 30, false)
+    val priorityQueue = PriorityQueue(MilitaryPersonComparator)
+    arrayListOf(p1,p2,p3,p4,p5).forEach{
         priorityQueue.enqueue(it)
     }
     while(!priorityQueue.isEmpty){
         println(priorityQueue.dequeue())
     }
+
 }
