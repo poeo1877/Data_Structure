@@ -108,6 +108,29 @@ abstract class AbstractHeap<Element>(): HeapInterface<Element>{
             }
         }
     }
+    fun getNthSmallestElement(n: Element): Element? {
+        var current = 1
+        while(!isEmpty){
+            val element = remove()
+            if(current == n){
+                return element
+            }
+            current += 1
+        }
+        return null
+    }
+    fun merge(heap: AbstractHeap<Element>){
+        elements.addAll(heap.elements)
+        buildHeap()
+    }
+    private fun buildHeap(){
+        if(!elements.isEmpty()){
+            (count / 2 downTo 0).forEach {
+                siftDown(it)
+            }
+        }
+    }
+
 }
 
 class MaxHeap<Element: Comparable<Element>>() : AbstractHeap<Element>() {

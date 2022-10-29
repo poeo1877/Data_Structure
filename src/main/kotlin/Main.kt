@@ -1,10 +1,12 @@
 
 
 fun main(){
-    val array = arrayListOf(1,12,3,4,1,6,8,7)
-    val h = MinHeap<Int>()
-    h.heapify(array)
-    while(!h.isEmpty){
-        println(h.remove())
+    val priorityQueue = MaxPriorityQueue<String>()
+
+    arrayListOf("one", "two", "three", "forty", "five", "six", "seven", "eight", "nine").forEach{
+        priorityQueue.enqueue(it)
+    }
+    while (!priorityQueue.isEmpty){
+        println(priorityQueue.dequeue())
     }
 }

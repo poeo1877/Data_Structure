@@ -72,3 +72,21 @@ class RingBufferQueue<T>(size: Int):QueueInterface<T>{
         if(isEmpty)null else ringBuffer.read()
     override fun toString():String = ringBuffer.toString()
 }
+
+abstract class AbstractPriorityQueue<T> : QueueInterface<T> {
+    abstract val heap: AbstractHeap<T>
+
+    override fun enqueue(element: T): Boolean {
+        heap.insert(element)
+        return true
+    }
+
+    override fun dequeue() = heap.remove()
+    override val count: Int
+        get() = heap.count
+    override fun peek() = heap.peek()
+}
+
+class MaxPriorityQueue<T: Comparable<T>> : AbstractPriorityQueue<T>() {
+    override val heap: MaxHeap<T> = MaxHeap<T>()
+}
