@@ -9,7 +9,7 @@ fun<T: Comparable<T>> ArrayList<T>.bubbleSort(showPasses: Boolean = false) {
                 swapped = true
             }
         }
-        if(showPasses)println(this)
+        if(showPasses)println(this) //중간 swap 결과를 보여줌
         if(!swapped)return
     }
 }
