@@ -1,6 +1,6 @@
 fun main(){
-    val list = arrayListOf(9, 4, 10, 3)
+    val list = arrayListOf(9, 4, 10, 3, 12,2,1)
     println("Original: $list")
-    list.insertionSort(true)
-    println("Insertion sorted: $list")
+    val result=list.mergeSort()
+    println("Insertion sorted: $result")
 }
