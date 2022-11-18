@@ -1,7 +1,5 @@
 fun main(){
-    val list = (0..10).map{
-        (Math.random()*10000).toInt()   }.toMutableList()
-    println("Original: $list")
-    list.lexicographicalSort()
-    println("Insertion sorted: $list")
+    val array = arrayOf(6, 12, 2, 26, 8, 18, 21, 9, 5)
+    array.heapSort(Comparator{o1: Int, o2:Int -> o1 - o2})
+    print(array.joinToString())
 }
