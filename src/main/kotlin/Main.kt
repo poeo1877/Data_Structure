@@ -1,5 +1,7 @@
 fun main(){
-    val array = arrayOf(6, 12, 2, 26, 8, 18, 21, 9, 5)
-    array.heapSort(Comparator{o1: Int, o2:Int -> o2 - o1})  //내림차순으로 정렬...
-    print(array.joinToString())
+    val list = arrayListOf(12, 0, 3, 9, 2, 21, 18, 27, 1, 5, 8, -1, 8)
+    println("Original: $list")
+    list.quicksortLomuto(0, list.size-1)
+    println("Sorted: $list")
+
 }
