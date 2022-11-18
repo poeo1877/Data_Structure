@@ -1,6 +1,7 @@
 fun main(){
-    val list = arrayListOf(9, 4, 10, 3, 12,2,1, 1, 410, 88, 1772)
+    val list = (0..10).map{
+        (Math.random()*10000).toInt()   }.toMutableList()
     println("Original: $list")
-    list.radixSort()
+    list.lexicographicalSort()
     println("Insertion sorted: $list")
 }
