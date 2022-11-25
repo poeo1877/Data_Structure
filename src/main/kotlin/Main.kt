@@ -1,5 +1,5 @@
-fun getGraph(): AdjacencyList<String>{
-    val graph = AdjacencyList<String>()
+fun getGraph(): AdjacencyMatrix<String>{
+    val graph = AdjacencyMatrix<String>()
     val singapore = graph.createVertex("Singapore")
     val tokyo = graph.createVertex("Tokyo")
     val hongKong = graph.createVertex("Hong Kong")
