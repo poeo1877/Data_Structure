@@ -29,5 +29,8 @@ class AdjacencyList<T> : Graph<T>{
         }
     }
 
+
+    override val allVertices: ArrayList<Vertex<T>>
+        get() = ArrayList(adjacencies.keys)
 }
 

@@ -55,4 +55,6 @@ class AdjacencyMatrix<T>: Graph<T>{
         return "$verticesDescription\n\n$edgesDescription"
     }
 
+    override val allVertices: ArrayList<Vertex<T>>
+        get() = vertices
 }
